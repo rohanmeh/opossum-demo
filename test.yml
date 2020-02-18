@@ -1,0 +1,14 @@
+config:
+    target: 'http://localhost:8080/api/test'
+    phases:
+      - duration: 5
+        arrivalRate: 1
+        rampTo: 5
+        name: "Warm up the application"
+      - duration: 30
+        arrivalRate: 10
+        name: "Sustained max load"  
+scenarios:
+- flow:
+    - get:
+        url: "/api/test"
